@@ -6,6 +6,20 @@
     <%= render @organized_events %>
   </ol>
 <% end %>
+
+<h3>All your upcoming events:</h3>
+
+  <ul class="events upcoming_events">
+    <%= render @user.attended_events.upcoming %>
+  </ul>
+
+<h3>All your past events:</h3>
+
+  <ul class="events past_events">
+    <%= render @user.attended_events.past %>
+  </ul>
+
+
 <%= link_to "Create a new event", new_event_path %><br>
 <%= link_to "See all events", events_path %><br>
 <%= link_to "Log out", logout_path, method: :delete %>
