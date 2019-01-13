@@ -16,6 +16,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @organized_events = @user.organized_events
+    redirect_to root_url and return unless @user == current_user
   end
 
   private
